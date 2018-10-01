@@ -1,0 +1,3 @@
+rootProject.name = 'picassocompat'
+rootProject.projectDir = new File(settingsDir, "./../../")
+include ':picassocompat'

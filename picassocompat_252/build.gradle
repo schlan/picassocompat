@@ -1,0 +1,37 @@
+
+ext {
+    artifactId = 'picassocompat-252'
+    packaging = 'aar'
+}
+
+apply plugin: 'com.android.library'
+apply from: '../scripts/gradle/picasso-compat-deploy.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName rootProject.ext.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'com.squareup.picasso:picasso:2.5.2'
+    compileOnly 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+    if (useLocalDependency()) {
+        api project(':picassocompat_parent')
+    } else {
+        api group: 'com.sebchlan.picassocompat', name: 'picassocompat-parent', version: rootProject.ext.versionName, changing: true
+    }
+}

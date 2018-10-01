@@ -1,0 +1,20 @@
+
+apply from: 'scripts/gradle/gradle-commons.gradle'
+
+allprojects {
+    repositories {
+
+        maven {
+            url 'file:///tmp/repo'
+        }
+
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+
+        google()
+
+        jcenter()
+
+    }
+}
