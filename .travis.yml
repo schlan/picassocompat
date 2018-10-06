@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+language: android
+group: deprecated-2017Q3
+jdk:
+- oraclejdk8
+before_cache:
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+android:
+  components:
+  - tools
+  - android-28
+  - platform-tools
+  - build-tools-26.0.2
+  - extra-android-m2repository
+  licenses:
+  - android-sdk-license-[0-9a-f]{8}
+  - android-sdk-preview-license-[0-9a-f]{8}
+branches:
+  only:
+  - master
+env:
+  global:
+  # sebSonatypeUsername
+  - secure: "m2mwvNBHH7Q8VaiR1cxyx7OFt9IME9Hd7koAXq9ZH3figGjxanaw8lk6qPwI/O4I1xYts5cYx9fO7o9uHCAnphf+ixSsoj1r4OANNXNglYkQ6XkPsBh5lwk8vZZrhd1+87tXX9Lk4zM7bbcs2s96FljwD1AgXSNHW7cE8cVwvSmc7Ag/W47QBcrZN0WGFiMwKK4hJ6mJPvBAqbm5/zvQFfE0pq4JPvaDP6LPbTvq7ng91boI9pYLolaveRywCdCVcJghE5BSPAGOQim/w1XavGcuBsTtQLhEOJ7qn6WNIbM5k302dELsXE87cUr0rUOwdKqh2p5I4TySXdDNoYIgnwd926kulnaW2S4ssF33FlxCoHpOGCwuPUxANNKoZLG45KpylAqbr/IAzwRv28tEbe4GRTiehJbYt7vG1t1usFsCNdvZGGP9XekkObp/rcVLj4pULFhCObCAsrFH7nUTvRhOMzZlTeazsQTSihukVeHBWcnJ7xmduwrmxSoIeYxYgNi0BsUClkYPlK7jzI3O1Hx8bKll28HXRvBs6a9NbtUY3cYCe45CZT4OyVMg6ZAk8yjTmHtd4Cf6bDIOFf4dKT3Yw1ODJC31OUer48+lcnCwmKKurrVBzQA4F583bZqZkpQh3g5X6dZOfEc6RCKDXjHsB3dLEBidGloSh3AQcZg="
+  # sebSonatypePassword
+  - secure: "N5edIjVSkphCHNchp9wCzle4cGuo9dpEYAmCFpNlJWUWzOGc/sRge2vXKxXIMDgbDliGQfXNiyQC5+iHr7y9GT0aqRmRlhl0v2ke+QEx6DyPDHfCi+NWYM3weSf492YnXJuZdLVVzSrl1tgZ1D1u5AWAApagOelGEsaQqQLD/HSvgJoSPHRigNo5sujaxq4UWWERnRUk6uCx1JBTWjw56ARnGl1s2D+4iLhQKBXhYWEI31sKY78kPqZT4Ra0txFfrxzkbrVePzcMkWlJ3tjDaSERi2f01YQw6zNfWFUaikk6SpF8Ghor4f9tX3ezyOEZhxJ/PlAUmXxDEntwZnS2WO1Zu5Pltgib2c3F4DrCVZDPnI8M+baBAdzg+FFVuisopub33EsbKlkX0XB3smS5Nb6atK7MTtGBXSCMYqOdBJmjGn5pA8fNzZsbhDkGfjgz6fLsj8v5y3XxsdAhFGongwLguYndycQpVQwx1U8Ph5KHBPmw+Qds8s/sdq01Nee+hKTPegex7MM+qh0pbToc56fKyGJQzxPpAjOgaouSkZPWc6f/5v2VcOySQuFr/4Cs7upTxCBVMv0Tu9E1MoTv9ZIjnmd0zMRhIr7ymQk8LKTXrHv9WREMU1f358sDYtmNx9RbCUnwo5n1IePXN0qILwJhUCFVf3YJfR3+H0UCmC0="
+script:
+- ./scripts/build.sh
