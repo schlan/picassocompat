@@ -423,17 +423,23 @@ public class PicassoCompat271828 implements PicassoCompat {
                     break;
             }
 
-            targetCompat.onBitmapLoaded(bitmap, source);
+            if (targetCompat != null) {
+                targetCompat.onBitmapLoaded(bitmap, source);
+            }
         }
 
         @Override
         public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-            targetCompat.onBitmapFailed(errorDrawable);
+            if (targetCompat != null) {
+                targetCompat.onBitmapFailed(errorDrawable);
+            }
         }
 
         @Override
         public void onPrepareLoad(Drawable placeHolderDrawable) {
-            targetCompat.onPrepareLoad(placeHolderDrawable);
+            if (targetCompat != null) {
+                targetCompat.onPrepareLoad(placeHolderDrawable);
+            }
         }
     }
 
@@ -447,12 +453,16 @@ public class PicassoCompat271828 implements PicassoCompat {
 
         @Override
         public void onSuccess() {
-            callbackCompat.onSuccess();
+            if (callbackCompat != null) {
+                callbackCompat.onSuccess();
+            }
         }
 
         @Override
         public void onError(Exception e) {
-            callbackCompat.onError();
+            if (callbackCompat != null) {
+                callbackCompat.onError();
+            }
         }
 
     }
