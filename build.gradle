@@ -10,7 +10,7 @@ ext {
     versionName = "1.0.2-SNAPSHOT"
 
     buildSettings = [
-            localBuild : false,
+            localBuild : true,
     ]
 }
 

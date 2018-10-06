@@ -129,9 +129,9 @@ class PicassoCompat252 implements PicassoCompat {
     }
 
 
-    class Builder implements PicassoCompat.Builder {
+    static class Builder implements PicassoCompat.Builder {
 
-        private Picasso.Builder builder;
+        private final Picasso.Builder builder;
 
         Builder(Context context) {
             builder = new Picasso.Builder(context);

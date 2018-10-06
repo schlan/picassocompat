@@ -34,6 +34,10 @@ public class PicassoCompat271828 implements PicassoCompat {
     private final Map<TargetCompat, Target> targetMap = new HashMap<>();
     private final Picasso picasso;
 
+    PicassoCompat271828() {
+        this(Picasso.get());
+    }
+
     private PicassoCompat271828(Picasso picasso) {
         this.picasso = picasso;
     }
@@ -126,7 +130,7 @@ public class PicassoCompat271828 implements PicassoCompat {
     }
 
 
-    class Builder implements PicassoCompat.Builder {
+    static class Builder implements PicassoCompat.Builder {
 
         private Picasso.Builder builder;
 
