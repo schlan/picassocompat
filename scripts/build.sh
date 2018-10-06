@@ -71,7 +71,7 @@ branchBuild() {
     pullRequestBuild
 
     boxOut "Upload Snapshots"
-    uploadSnapshotSdk
+    uploadSnapshot
 }
 
 acceptLicenses

@@ -28,7 +28,7 @@ import java.util.concurrent.ExecutorService;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 
-class PicassoCompat252 implements PicassoCompat {
+public class PicassoCompat252 implements PicassoCompat {
 
     private final Map<TargetCompat, Target> targetMap = new HashMap<>();
     private final Picasso picasso;
