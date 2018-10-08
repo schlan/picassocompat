@@ -163,7 +163,7 @@ public class PicassoCompat271828 implements PicassoCompat {
         }
 
         @Override
-        public PicassoCompat.Builder listener(@NonNull final ListenerCompat listener) {
+        public PicassoCompat.Builder listener(@NonNull final Listener listener) {
             builder.listener(new Picasso.Listener() {
                 @Override
                 public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
