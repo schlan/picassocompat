@@ -7,7 +7,7 @@ ext {
     SDK_URL = 'https://github.com/schlan/picassocompat.git'
     PROJECT_NAME = 'PicassoCompat'
     PROJECT_DESCRIPTION = 'Make Picasso work'
-    SDK_VERSION_NAME = rootProject.ext.versionName
+    SDK_VERSION_NAME = versions.versionName
     SDK_ARTIFACT_ID = project.ext.artifactId
     SDK_PACKAGING = project.ext.packaging
     POM_DEVELOPER_ID = 'sebchlan'

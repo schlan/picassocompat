@@ -8,8 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import java.io.File;
 import java.util.concurrent.ExecutorService;
 

@@ -10,8 +10,8 @@ import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
 
-import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Callback;
+import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Target;

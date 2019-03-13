@@ -1,20 +1,32 @@
 apply from: 'scripts/gradle/gradle-commons.gradle'
 apply from: 'scripts/gradle/picasso-compat-repos.gradle'
 
-ext {
-    compileSdkVersion = 28
-    targetSdkVersion = 28
-    minSdkVersion = 16
-
-    supportLibVersion = "28.0.0"
-    versionName = "1.2.0-SNAPSHOT"
-
-    buildSettings = [
-            localBuild : true,
-    ]
-}
-
 buildscript {
+
+    ext {
+        versions = [
+                versionName      : "1.99.0-SNAPSHOT",
+
+                compileSdkVersion: 28,
+                targetSdkVersion : 28,
+                minSdkVersion    : 16,
+
+                // Dependencies
+                okhttp           : "3.12.1",
+                downloader       : "1.1.0",
+                annotations      : "28.0.0",
+                picasso252       : "2.5.2",
+                picasso27        : "2.71828",
+
+        ]
+
+        supportLibVersion = "28.0.0"
+
+
+        buildSettings = [
+                localBuild: true,
+        ]
+    }
 
     repositories {
         google()

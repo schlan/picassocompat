@@ -8,13 +8,13 @@ apply plugin: 'com.android.library'
 apply from: '../scripts/gradle/picasso-compat-deploy.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion versions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
         versionCode 1
-        versionName rootProject.ext.versionName
+        versionName versions.versionName
     }
 
     buildTypes {
@@ -25,8 +25,6 @@ android {
 }
 
 dependencies {
-    implementation group: 'com.jakewharton.picasso', name: 'picasso2-okhttp3-downloader', version: '1.1.0'
-    compileOnly group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.11.0'
-
-    api 'com.android.support:support-annotations:28.0.0'
+    compileOnly group: 'com.squareup.okhttp3', name: 'okhttp', version: versions.okhttp
+    api group: 'com.android.support', name: 'support-annotations', version: versions.annotations
 }
