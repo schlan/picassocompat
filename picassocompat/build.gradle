@@ -8,13 +8,13 @@ apply plugin: 'com.android.library'
 apply from: '../scripts/gradle/picasso-compat-deploy.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion versions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
         versionCode 1
-        versionName rootProject.ext.versionName
+        versionName versions.versionName
         consumerProguardFiles 'consumer-proguard.pro'
     }
 
@@ -27,14 +27,14 @@ android {
 }
 
 dependencies {
-    implementation group: 'com.android.support', name: 'support-annotations', version: rootProject.ext.supportLibVersion
-    implementation group: 'com.squareup.picasso', name: 'picasso', version: '2.5.2'
+    implementation group: 'com.android.support', name: 'support-annotations', version: versions.supportLibVersion
+    implementation group: 'com.squareup.picasso', name: 'picasso', version: versions.picasso252
 
     if (useLocalDependency()) {
         api project(':picassocompat_252')
         api project(':picassocompat_271828')
     } else {
-        api group: 'com.sebchlan.picassocompat', name: 'picassocompat-252', version: rootProject.ext.versionName, changing: true
-        api group: 'com.sebchlan.picassocompat', name: 'picassocompat-271828', version: rootProject.ext.versionName, changing: true
+        api group: 'com.sebchlan.picassocompat', name: 'picassocompat-252', version: versions.versionName, changing: true
+        api group: 'com.sebchlan.picassocompat', name: 'picassocompat-271828', version: versions.versionName, changing: true
     }
 }
