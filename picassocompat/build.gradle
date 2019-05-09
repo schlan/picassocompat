@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation group: 'com.android.support', name: 'support-annotations', version: versions.supportLibVersion
+    implementation group: 'com.android.support', name: 'support-annotations', version: versions.annotations
     implementation group: 'com.squareup.picasso', name: 'picasso', version: versions.picasso252
 
     if (useLocalDependency()) {
