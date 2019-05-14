@@ -11,7 +11,7 @@
 ## Installation
 
 ```java
-implementation group: 'com.sebchlan.picassocompat', name: 'picassocompat', version: '1.2.0'
+implementation group: 'com.sebchlan.picassocompat', name: 'picassocompat', version: '1.2.1'
 ```
 
 By default PicassoCompat depends on Picasso `v2.5.2`.
